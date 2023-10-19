@@ -70,14 +70,24 @@ Development of this application is started by using [maximegris/angular-electron
 
 After cloning this repository, run Visual Studio Code and open this folder in container.
 
+
+To build, prepend the `npm` command with `sudo`.
+
+>**Example**
+>
+>Build:
+>
+>```bash
+>sudo npm ci
+>```
+
 To create the release binaries, prepend the `npm` command with `sudo`.
 
-### Example:
-
-Create a Windows executable and installer:
-
-```bash
-sudo npm run package:windows
-```
-
-Find the binaries in the `release/win-unpacked` directory and the installer in `release`.
+>**Example**
+>
+>Create a Windows executable and installer:
+>
+>```bash
+> sudo npm run package:windows
+> ```
+>Find the binaries in the `release/win-unpacked` directory and the installer in `release`.
