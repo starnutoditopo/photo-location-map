@@ -19,7 +19,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo chown node ${containerWorkspaceFolder}/node_modules"	,
+	//"postCreateCommand": "sudo chown node ${containerWorkspaceFolder}/node_modules"	,
 
 	// Configure tool-specific properties.
 	// "customizations": {},

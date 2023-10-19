@@ -65,3 +65,19 @@ npm modules used in Electron main process need to be configured in `dependencies
 ## Sidenote
 
 Development of this application is started by using [maximegris/angular-electron](https://github.com/maximegris/angular-electron). [The contents of the respository as of commit 7618abcea496a26656be11f31542713b728919e9 (on Dec 31, 2018)](https://github.com/maximegris/angular-electron/tree/7618abcea496a26656be11f31542713b728919e9) are used with some modification and removal.
+
+## In-container development with Visual Studio Code and Docker
+
+After cloning this repository, run Visual Studio Code and open this folder in container.
+
+To create the release binaries, prepend the `npm` command with `sudo`.
+
+### Example:
+
+Create a Windows executable and installer:
+
+```bash
+sudo npm run package:windows
+```
+
+Find the binaries in the `release/win-unpacked` directory and the installer in `release`.
