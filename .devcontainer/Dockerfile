@@ -1,13 +1,27 @@
 FROM electronuserland/builder:wine-chrome
 
+
+# Update node and npm to the latest version
+# See: https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/
+RUN npm install -g n
+RUN n lts
+RUN n latest
+RUN n prune
+RUN npm install -g npm@latest
+
+
+
+
+# Create the user and assign grants
+# See: https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user#_creating-a-nonroot-user
+
 ARG USERNAME=electron
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-# See: https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user#_creating-a-nonroot-user
 # Create the user
 RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && useradd --shell /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
     #
     # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
     && apt-get update \
